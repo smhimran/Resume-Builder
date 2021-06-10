@@ -1,0 +1,437 @@
+$themeColor: #0f92ff;
+$themeColorGreen: #1bbb1b;
+$secondaryColor: #0f92ff;
+$secondaryColorGreen: #1bbb1b;
+$textColor: #444;
+$textColorSecondary: #666;
+$breakpoint-tablet: 768px;
+
+@mixin section-header {
+  padding: 10px 0;
+  border-bottom: solid 3px $secondaryColor;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+@mixin header-text {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: $textColor;
+  text-transform: uppercase;
+}
+
+@mixin description {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+@mixin fonts {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+@mixin item-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: $textColor;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin list-border {
+  border-bottom: dashed 0.1em #ddd;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+}
+
+.resume-container {
+  // width: 45%;
+  // margin: 40px auto;
+  color: $themeColor;
+  background-color: #fff;
+  padding: 25px 40px;
+  box-shadow: 0px 2px 5px gray;
+
+  .main {
+    // margin: 20px;
+
+    @include fonts();
+
+    .header {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      //   border-bottom: solid 2px #bbb;
+      .name {
+        @include header-text();
+
+        color: #111;
+        font-size: 32px;
+        margin: 10px 0 7px 0;
+        margin-bottom: 0;
+        padding-top: 20px;
+      }
+      .info {
+        .contact {
+          .intro {
+            margin-bottom: 0;
+
+            h4 {
+              font-size: 18px;
+              margin-bottom: 0;
+            }
+          }
+          .address {
+            margin: 10px auto;
+            margin-top: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 3rem;
+            align-items: center;
+            .col {
+              display: block;
+              color: #222;
+              margin: 10px 0;
+              margin-top: 0;
+              font-size: 16px;
+
+              div {
+                margin: 10px 0;
+              }
+
+              a {
+                text-decoration: none;
+                color: #222;
+              }
+
+              .fa {
+                color: $themeColor;
+              }
+            }
+          }
+        }
+      }
+
+      .dp {
+        img {
+          height: 120px;
+          width: 120px;
+          margin: 20px auto;
+          border: 4px solid $themeColor;
+          border-radius: 500px;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-column-gap: 3rem;
+
+      .section-header {
+        @include section-header();
+        @include header-text();
+      }
+
+      .summary {
+        color: $textColor;
+
+        .summary-body {
+          @include description();
+        }
+      }
+
+      .skills {
+        color: $textColor;
+
+        .section-header {
+          margin-bottom: 10px;
+        }
+
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .skill-group {
+          padding: 10px 0px;
+          margin-bottom: 7px;
+
+          border-bottom: dashed 0.1em #ddd;
+
+          .skill-item {
+            display: inline-block;
+            padding: 10px 0;
+            margin: auto 0.5rem;
+            font-size: 16px;
+            border-bottom: solid 0.1rem #bbb;
+          }
+        }
+      }
+
+      .strengths {
+        .strengthlists {
+          .strengthlist {
+            list-style-type: none;
+            padding-left: 0;
+            color: $textColor;
+            margin-top: 5px;
+
+            .strength {
+              padding: 10px 0;
+              line-height: 24px;
+              font-weight: bold;
+
+              .fa {
+                color: $themeColor;
+                &::after {
+                  content: "  ";
+                  padding-right: 3px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .online {
+        .social-links {
+          .sociallist {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+
+            .social {
+              @include list-border();
+              display: grid;
+              grid-template-columns: 13% auto;
+              padding: 10px 0;
+
+              .icon {
+                padding: 2px 5px;
+                font-size: 22px;
+              }
+
+              .link {
+                color: $textColor;
+                margin-left: 10px;
+                font-size: 15px;
+                font-weight: bold;
+                line-height: 18px;
+
+                a {
+                  display: block;
+                  font-weight: normal;
+                  color: $textColorSecondary;
+                  text-decoration: none;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .education {
+        .educations {
+          list-style-type: none;
+          padding-left: 0;
+
+          .education-item {
+            display: grid;
+            grid-template-columns: 8fr 2fr;
+
+            .education-details {
+              .item-title {
+                @include item-title();
+              }
+
+              .institute,
+              .duration {
+                margin: 0;
+                padding: 0;
+              }
+            }
+
+            .grade {
+              color: $textColorSecondary;
+              text-align: center;
+              padding: 10px 0;
+              margin-top: 10px;
+
+              #left-border-item {
+                margin: 0;
+                padding: 0;
+                padding-left: 12px;
+                border-left: solid 0.5px $textColor;
+
+                .gpa {
+                  padding: 0;
+                  margin: 0;
+                }
+
+                .point {
+                  font-weight: bolder;
+                  color: $themeColor;
+                  padding: 0;
+                  margin: 0;
+                  font-size: 16px;
+
+                  .total-point {
+                    color: $textColorSecondary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .projects {
+        .projectslists {
+          .projectslist {
+            list-style-type: none;
+            padding-left: 0;
+
+            .projectitem {
+              @include list-border();
+              padding-bottom: 12px;
+              margin-top: 10px;
+
+              .project {
+                color: $textColor;
+                font-family: "Lucida Sans", "Lucida Sans Regular",
+                  "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+                  sans-serif;
+
+                .project-title {
+                  padding: 0;
+                  margin: 2px;
+                }
+
+                .link {
+                  font-size: 12px;
+                  margin: 0;
+
+                  .fa {
+                    color: $themeColor;
+                  }
+
+                  a {
+                    text-decoration: none;
+                    color: $textColor;
+                  }
+                }
+
+                .description {
+                  font-size: 12px;
+
+                  p {
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .achievements {
+        .achievements-items {
+          .achievementlist {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 2px;
+
+            .achivement {
+              @include list-border();
+              padding: 10px 0;
+              color: $textColor;
+              font-weight: bold;
+              font-size: 14px;
+
+              .icon {
+                padding: 2px 5px;
+                font-size: 20px;
+                color: $themeColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+
+.preview {
+  background-color: #fff;
+  padding: 40px;
+  overflow: auto;
+
+  border-left: solid 5px #707477;
+
+  .preview-header {
+    .preview-heading {
+      text-align: center;
+      color: #ec3b18;
+      margin: 0;
+    }
+    .preview-btn {
+      display: inline-block;
+      font-size: 18px;
+      float: right;
+      padding: 10px 10px;
+      background-color: #fff;
+      color: $themeColorGreen;
+      border: solid 1px $themeColorGreen;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $themeColorGreen;
+        color: #fff;
+      }
+    }
+  }
+
+  .print-preview {
+    background-color: $textColorSecondary;
+    padding: 10px 0;
+
+    .preview-container {
+      width: 210mm;
+      height: 297mm;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+}
