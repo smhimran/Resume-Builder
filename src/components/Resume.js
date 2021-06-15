@@ -1,13 +1,28 @@
 import dp from "../2.jpg";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeImage } from "../actions/formActions";
 
 function Resume() {
-  const [name, setName] = useState(localStorage.getItem("Name"));
-  const [intro, setIntro] = useState(localStorage.getItem("Intro"));
-  const [email, setEmail] = useState(localStorage.getItem("Email"));
-  const [contact, setContact] = useState(localStorage.getItem("Contact"));
-  const [url, setUrl] = useState(localStorage.getItem("Url"));
-  const [address, setAddress] = useState(localStorage.getItem("Address"));
+  const name = useSelector((state) => state.name);
+  const intro = useSelector((state) => state.intro);
+  const email = useSelector((state) => state.email);
+  const contact = useSelector((state) => state.contact);
+  const url = useSelector((state) => state.url);
+  const address = useSelector((state) => state.address);
+  const image = useSelector((state) => state.image);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!image) {
+      dispatch(
+        changeImage(
+          "https://i.ibb.co/0J5cNkH/16-168770-user-iconset-no-profile-picture-icon-circle-clipart.jpg"
+        )
+      );
+    }
+  }, [image]);
 
   return (
     <div className="resume-container">
@@ -22,43 +37,45 @@ function Resume() {
               <div className="address">
                 <div className="col">
                   <div>
-                    <a href="tel:+8801517141687">
+                    <a href="tel:{contact}">
                       <span>
                         <i className="fa fa-phone"></i>
                       </span>
-                      +8801517141687
+                      {contact}
                     </a>
                   </div>
                   <div>
-                    <a href="mailto:smhimran@gmail.com">
+                    <a href="mailto:{email}">
                       <span>
                         <i className="fa fa-envelope-o"></i>
                       </span>
-                      smhimran@gmail.com
+                      {email}
                     </a>
                   </div>
                 </div>
                 <div className="col">
-                  <div>
-                    <a href="http://smhimran.me">
-                      <span>
-                        <i className="fa fa-link"></i>
-                      </span>{" "}
-                      smhimran.me
-                    </a>
-                  </div>
+                  {url && (
+                    <div>
+                      <a href="http://{url}">
+                        <span>
+                          <i className="fa fa-link"></i>
+                        </span>{" "}
+                        {url}
+                      </a>
+                    </div>
+                  )}
                   <div>
                     <span>
                       <i className="fa fa-map-marker"></i>
                     </span>{" "}
-                    Dhaka, Bangladesh
+                    {address}
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="dp">
-            <img src={dp} alt="dp" />
+            <img src={image} alt="dp" />
           </div>
         </div>
         <div className="wrapper">

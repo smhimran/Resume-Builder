@@ -1,11 +1,21 @@
 import {
   Box,
-  Button,
   Container,
+  Button,
   TextField,
   Typography,
 } from "@material-ui/core";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  changeAdress,
+  changeContact,
+  changeEmail,
+  changeImage,
+  changeIntro,
+  changeName,
+  changeUrl,
+} from "../actions/formActions";
 
 function Form() {
   const [name, setName] = useState(localStorage.getItem("Name"));
@@ -15,6 +25,18 @@ function Form() {
   const [url, setUrl] = useState(localStorage.getItem("Url"));
   const [address, setAddress] = useState(localStorage.getItem("Address"));
 
+  const dispatch = useDispatch();
+
+  const handleImage = (event) => {
+    event.preventDefault();
+    const { files } = event.target;
+    const localImageUrl = window.URL.createObjectURL(files[0]);
+
+    dispatch(changeImage(localImageUrl));
+
+    localStorage.setItem("Image", localImageUrl);
+  };
+
   return (
     <Box component="div" m={2} p={2}>
       <Typography variant="h3" component="h3" align="center" color="secondary">
@@ -22,6 +44,10 @@ function Form() {
       </Typography>
 
       <Container maxWidth="md" style={{ marginTop: "20px" }}>
+        <Typography variant="h4" component="h4" align="center" color="primary">
+          Personal Information
+        </Typography>
+
         <form autoComplete="off">
           <Box component="div" m={2}>
             <TextField
@@ -35,6 +61,7 @@ function Form() {
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
+                dispatch(changeName(e.target.value));
                 localStorage.setItem("Name", e.target.value);
               }}
             />
@@ -52,6 +79,7 @@ function Form() {
               value={intro}
               onChange={(e) => {
                 setIntro(e.target.value);
+                dispatch(changeIntro(e.target.value));
                 localStorage.setItem("Intro", e.target.value);
               }}
             />
@@ -69,6 +97,7 @@ function Form() {
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
+                dispatch(changeEmail(e.target.value));
                 localStorage.setItem("Email", e.target.value);
               }}
             />
@@ -86,6 +115,7 @@ function Form() {
                 value={contact}
                 onChange={(e) => {
                   setContact(e.target.value);
+                  dispatch(changeContact(e.target.value));
                   localStorage.setItem("Contact", e.target.value);
                 }}
               />
@@ -101,6 +131,7 @@ function Form() {
                 value={url}
                 onChange={(e) => {
                   setUrl(e.target.value);
+                  dispatch(changeUrl(e.target.value));
                   localStorage.setItem("Url", e.target.value);
                 }}
               />
@@ -117,10 +148,18 @@ function Form() {
                 value={address}
                 onChange={(e) => {
                   setAddress(e.target.value);
+                  dispatch(changeAdress(e.target.value));
                   localStorage.setItem("Address", e.target.value);
                 }}
               />
             </Box>
+          </Box>
+
+          <Box component="div" m={2}>
+            <Button variant="contained" component="label" color="secondary">
+              Choose Image
+              <input type="file" hidden onChange={handleImage} />
+            </Button>
           </Box>
         </form>
       </Container>
