@@ -5,6 +5,7 @@ import {
   CHANGE_IMAGE,
   CHANGE_INTRO,
   CHANGE_NAME,
+  CHANGE_SUMMARY,
   CHANGE_URL,
 } from "./types";
 
@@ -54,5 +55,12 @@ export const changeImage = (image) => {
   return {
     type: CHANGE_IMAGE,
     payload: image,
+  };
+};
+
+export const changeSummary = (summary) => {
+  return {
+    type: CHANGE_SUMMARY,
+    payload: summary,
   };
 };

@@ -1,7 +1,5 @@
-import dp from "../2.jpg";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { changeImage } from "../actions/formActions";
+import React from "react";
+import { useSelector } from "react-redux";
 
 function Resume() {
   const name = useSelector((state) => state.name);
@@ -11,18 +9,7 @@ function Resume() {
   const url = useSelector((state) => state.url);
   const address = useSelector((state) => state.address);
   const image = useSelector((state) => state.image);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!image) {
-      dispatch(
-        changeImage(
-          "https://i.ibb.co/0J5cNkH/16-168770-user-iconset-no-profile-picture-icon-circle-clipart.jpg"
-        )
-      );
-    }
-  }, [image]);
+  const summary = useSelector((state) => state.summary);
 
   return (
     <div className="resume-container">
@@ -74,20 +61,20 @@ function Resume() {
               </div>
             </div>
           </div>
-          <div className="dp">
-            <img src={image} alt="dp" />
-          </div>
+          {image && (
+            <div className="dp">
+              <img src={image} alt="dp" />
+            </div>
+          )}
         </div>
         <div className="wrapper">
           <div className="left">
-            <div className="summary">
-              <h2 className="section-header">Summary</h2>
-              <p className="summary-body">
-                A student of Computer Science and Engineering at Daffodil
-                International University. I am also a Competitive Programmer and
-                an apprentice in Web Development.
-              </p>
-            </div>
+            {summary && (
+              <div className="summary">
+                <h2 className="section-header">Summary</h2>
+                <p className="summary-body">{summary}</p>
+              </div>
+            )}
             <div className="education">
               <h2 className="section-header">Education</h2>
               <div className="education-body">

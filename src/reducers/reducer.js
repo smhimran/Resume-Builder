@@ -5,6 +5,7 @@ import {
   CHANGE_IMAGE,
   CHANGE_INTRO,
   CHANGE_NAME,
+  CHANGE_SUMMARY,
   CHANGE_URL,
 } from "../actions/types";
 
@@ -16,6 +17,7 @@ const initialState = {
   url: localStorage.getItem("Url"),
   address: localStorage.getItem("Address"),
   image: localStorage.getItem("Image"),
+  summary: localStorage.getItem("Summary"),
 };
 
 const reducer = (state = initialState, action) => {
@@ -60,6 +62,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         image: action.payload,
+      };
+
+    case CHANGE_SUMMARY:
+      return {
+        ...state,
+        summary: action.payload,
       };
 
     default:

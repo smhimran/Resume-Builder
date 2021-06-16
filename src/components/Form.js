@@ -4,6 +4,7 @@ import {
   Button,
   TextField,
   Typography,
+  IconButton,
 } from "@material-ui/core";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -14,8 +15,10 @@ import {
   changeImage,
   changeIntro,
   changeName,
+  changeSummary,
   changeUrl,
 } from "../actions/formActions";
+import ClearIcon from "@material-ui/icons/Clear";
 
 function Form() {
   const [name, setName] = useState(localStorage.getItem("Name"));
@@ -24,6 +27,9 @@ function Form() {
   const [contact, setContact] = useState(localStorage.getItem("Contact"));
   const [url, setUrl] = useState(localStorage.getItem("Url"));
   const [address, setAddress] = useState(localStorage.getItem("Address"));
+  const [summary, setSummary] = useState(localStorage.getItem("Summary"));
+
+  const [image, setImage] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -34,7 +40,14 @@ function Form() {
 
     dispatch(changeImage(localImageUrl));
 
-    localStorage.setItem("Image", localImageUrl);
+    setImage(true);
+
+    // localStorage.setItem("Image", localImageUrl);
+  };
+
+  const handleDeleteImage = () => {
+    setImage(false);
+    dispatch(changeImage(""));
   };
 
   return (
@@ -160,8 +173,48 @@ function Form() {
               Choose Image
               <input type="file" hidden onChange={handleImage} />
             </Button>
+            {image && (
+              <Box component="span">
+                <IconButton
+                  children={<ClearIcon />}
+                  color="secondary"
+                  onClick={handleDeleteImage}
+                />
+              </Box>
+            )}
           </Box>
         </form>
+      </Container>
+
+      <Container maxWidth="md" m={2}>
+        <Box component="div" m={2}>
+          <Typography
+            variant="h4"
+            component="h4"
+            align="center"
+            color="primary"
+          >
+            Summary
+          </Typography>
+
+          <Box component="div" m={2}>
+            <TextField
+              id="sumamry"
+              variant="standard"
+              type="text"
+              color="secondary"
+              label="Enter your short Summary"
+              fullWidth
+              multiline
+              value={summary}
+              onChange={(e) => {
+                setSummary(e.target.value);
+                dispatch(changeSummary(e.target.value));
+                localStorage.setItem("Summary", e.target.value);
+              }}
+            />
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
