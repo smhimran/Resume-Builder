@@ -1,6 +1,7 @@
 import {
   CHANGE_ADRESS,
   CHANGE_CONTACT,
+  CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
   CHANGE_IMAGE,
   CHANGE_INTRO,
@@ -62,5 +63,12 @@ export const changeSummary = (summary) => {
   return {
     type: CHANGE_SUMMARY,
     payload: summary,
+  };
+};
+
+export const changeEducations = (educations) => {
+  return {
+    type: CHANGE_EDUCATIONS,
+    payload: educations,
   };
 };

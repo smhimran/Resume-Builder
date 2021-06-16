@@ -4,7 +4,7 @@ $secondaryColor: #0f92ff;
 $secondaryColorGreen: #1bbb1b;
 $textColor: #444;
 $textColorSecondary: #666;
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 1024px;
 
 @mixin section-header {
   padding: 10px 0;
@@ -57,6 +57,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
+}
+
+.print-preview {
+  overflow: auto;
 }
 
 .resume-container {
@@ -279,7 +283,7 @@ body {
               #left-border-item {
                 margin: 0;
                 padding: 0;
-                padding-left: 12px;
+                padding-left: 10px;
                 border-left: solid 0.5px $textColor;
 
                 .gpa {

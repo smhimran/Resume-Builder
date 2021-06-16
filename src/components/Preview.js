@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import Resume from "./Resume";
 import { useReactToPrint } from "react-to-print";
 import { Button, Typography } from "@material-ui/core";
+import Print from "./Print";
 
 function Preview() {
   const componentRef = useRef();
@@ -38,7 +38,7 @@ function Preview() {
         </div>
         <div className="print-preview">
           <div className="preview-container">
-            <Resume ref={componentRef} />
+            <Print ref={componentRef} />
           </div>
         </div>
       </div>

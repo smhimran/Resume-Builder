@@ -11,8 +11,12 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
+}
+
+.print-preview {
+  overflow: auto;
 }
 
 .resume-container {
@@ -20,7 +24,7 @@ body {
   background-color: #fff;
   padding: 25px 40px;
   -webkit-box-shadow: 0px 2px 5px gray;
-  box-shadow: 0px 2px 5px gray;
+          box-shadow: 0px 2px 5px gray;
 }
 
 .resume-container .main {
@@ -33,7 +37,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 4fr 1fr;
-  grid-template-columns: 4fr 1fr;
+      grid-template-columns: 4fr 1fr;
 }
 
 .resume-container .main .header .name {
@@ -62,11 +66,11 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   grid-column-gap: 3rem;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .resume-container .main .header .info .contact .address .col {
@@ -97,16 +101,16 @@ body {
   border: 4px solid #0f92ff;
   border-radius: 500px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   -o-object-position: top;
-  object-position: top;
+     object-position: top;
 }
 
 .resume-container .main .wrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 2fr;
-  grid-template-columns: 3fr 2fr;
+      grid-template-columns: 3fr 2fr;
   grid-column-gap: 3rem;
 }
 
@@ -164,37 +168,17 @@ body {
   margin-top: 5px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .strengths
-  .strengthlists
-  .strengthlist
-  .strength {
+.resume-container .main .wrapper .strengths .strengthlists .strengthlist .strength {
   padding: 10px 0;
   line-height: 24px;
   font-weight: bold;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .strengths
-  .strengthlists
-  .strengthlist
-  .strength
-  .fa {
+.resume-container .main .wrapper .strengths .strengthlists .strengthlist .strength .fa {
   color: #0f92ff;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .strengths
-  .strengthlists
-  .strengthlist
-  .strength
-  .fa::after {
+.resume-container .main .wrapper .strengths .strengthlists .strengthlist .strength .fa::after {
   content: "  ";
   padding-right: 3px;
 }
@@ -210,40 +194,20 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 13% auto;
-  grid-template-columns: 13% auto;
+      grid-template-columns: 13% auto;
   padding: 10px 0;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .online
-  .social-links
-  .sociallist
-  .social:last-child {
+.resume-container .main .wrapper .online .social-links .sociallist .social:last-child {
   border-bottom: none;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .online
-  .social-links
-  .sociallist
-  .social
-  .icon {
+.resume-container .main .wrapper .online .social-links .sociallist .social .icon {
   padding: 2px 5px;
   font-size: 22px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .online
-  .social-links
-  .sociallist
-  .social
-  .link {
+.resume-container .main .wrapper .online .social-links .sociallist .social .link {
   color: #444;
   margin-left: 10px;
   font-size: 15px;
@@ -251,15 +215,7 @@ body {
   line-height: 18px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .online
-  .social-links
-  .sociallist
-  .social
-  .link
-  a {
+.resume-container .main .wrapper .online .social-links .sociallist .social .link a {
   display: block;
   font-weight: normal;
   color: #666;
@@ -276,39 +232,18 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 8fr 2fr;
-  grid-template-columns: 8fr 2fr;
+      grid-template-columns: 8fr 2fr;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .education-details
-  .item-title {
+.resume-container .main .wrapper .education .educations .education-item .education-details .item-title {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #444;
   padding: 0;
   margin: 0;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .education-details
-  .institute,
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .education-details
-  .duration {
+.resume-container .main .wrapper .education .educations .education-item .education-details .institute,
+.resume-container .main .wrapper .education .educations .education-item .education-details .duration {
   margin: 0;
   padding: 0;
 }
@@ -320,42 +255,19 @@ body {
   margin-top: 10px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .grade
-  #left-border-item {
+.resume-container .main .wrapper .education .educations .education-item .grade #left-border-item {
   margin: 0;
   padding: 0;
-  padding-left: 12px;
+  padding-left: 10px;
   border-left: solid 0.5px #444;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .grade
-  #left-border-item
-  .gpa {
+.resume-container .main .wrapper .education .educations .education-item .grade #left-border-item .gpa {
   padding: 0;
   margin: 0;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .grade
-  #left-border-item
-  .point {
+.resume-container .main .wrapper .education .educations .education-item .grade #left-border-item .point {
   font-weight: bolder;
   color: #0f92ff;
   padding: 0;
@@ -363,16 +275,7 @@ body {
   font-size: 16px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .education
-  .educations
-  .education-item
-  .grade
-  #left-border-item
-  .point
-  .total-point {
+.resume-container .main .wrapper .education .educations .education-item .grade #left-border-item .point .total-point {
   color: #666;
 }
 
@@ -381,137 +284,55 @@ body {
   padding-left: 0;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem {
   border-bottom: dashed 0.1em #ddd;
   padding-bottom: 12px;
   margin-top: 10px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem:last-child {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem:last-child {
   border-bottom: none;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project {
   color: #444;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project
-  .project-title {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project .project-title {
   padding: 0;
   margin: 2px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project
-  .link {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project .link {
   font-size: 12px;
   margin: 0;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project
-  .link
-  .fa {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project .link .fa {
   color: #0f92ff;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project
-  .link
-  a {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project .link a {
   text-decoration: none;
   color: #444;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project
-  .description {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project .description {
   font-size: 12px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .projects
-  .projectslists
-  .projectslist
-  .projectitem
-  .project
-  .description
-  p {
+.resume-container .main .wrapper .projects .projectslists .projectslist .projectitem .project .description p {
   margin: 0;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .achievements
-  .achievements-items
-  .achievementlist {
+.resume-container .main .wrapper .achievements .achievements-items .achievementlist {
   list-style-type: none;
   padding-left: 0;
   margin-top: 2px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .achievements
-  .achievements-items
-  .achievementlist
-  .achivement {
+.resume-container .main .wrapper .achievements .achievements-items .achievementlist .achivement {
   border-bottom: dashed 0.1em #ddd;
   padding: 10px 0;
   color: #444;
@@ -519,24 +340,11 @@ body {
   font-size: 14px;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .achievements
-  .achievements-items
-  .achievementlist
-  .achivement:last-child {
+.resume-container .main .wrapper .achievements .achievements-items .achievementlist .achivement:last-child {
   border-bottom: none;
 }
 
-.resume-container
-  .main
-  .wrapper
-  .achievements
-  .achievements-items
-  .achievementlist
-  .achivement
-  .icon {
+.resume-container .main .wrapper .achievements .achievements-items .achievementlist .achivement .icon {
   padding: 2px 5px;
   font-size: 20px;
   color: #0f92ff;
@@ -590,10 +398,10 @@ body {
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .main-container {
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=App.css.map */
