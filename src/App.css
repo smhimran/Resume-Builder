@@ -1,6 +1,6 @@
 @page {
   size: A4;
-  margin: 0;
+  margin: 5px;
 }
 
 body {
@@ -279,6 +279,29 @@ body {
   color: #666;
 }
 
+.resume-container .main .wrapper .experience .experiences {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resume-container .main .wrapper .experience .experiences .experience-item {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.resume-container .main .wrapper .experience .experiences .experience-item .experience-details .item-title {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #444;
+  padding: 0;
+  margin: 0;
+}
+
+.resume-container .main .wrapper .experience .experiences .experience-item .experience-details .organization,
+.resume-container .main .wrapper .experience .experiences .experience-item .experience-details .duration {
+  margin: 0;
+  padding: 0;
+}
+
 .resume-container .main .wrapper .projects .projectslists .projectslist {
   list-style-type: none;
   padding-left: 0;
@@ -398,7 +421,7 @@ body {
   margin: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1344px) {
   .main-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;

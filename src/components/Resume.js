@@ -11,6 +11,7 @@ function Resume() {
   const image = useSelector((state) => state.image);
   const summary = useSelector((state) => state.summary);
   const educations = useSelector((state) => state.educations);
+  const experiences = useSelector((state) => state.experiences);
 
   return (
     <div className="resume-container">
@@ -76,72 +77,83 @@ function Resume() {
                 <p className="summary-body">{summary}</p>
               </div>
             )}
-            <div className="education">
-              <h2 className="section-header">Education</h2>
-              <div className="education-body">
-                <ul className="educations">
-                  {educations.map((education, index) => {
-                    return (
-                      <li className="education-item">
-                        <div className="education-details">
-                          <h4 className="item-title">{education.degree}</h4>
-                          <h5 className="institute">{education.institute}</h5>
-                          <h6 className="duration">
-                            <span>
-                              {" "}
-                              <i className="fa fa-calendar"></i>{" "}
-                            </span>{" "}
-                            {education.start} -{" "}
-                            {education.ongoing ? (
-                              <span>Ongoing</span>
-                            ) : (
-                              education.end
-                            )}
-                          </h6>
-                        </div>
-                        <div className="grade">
-                          <div id="left-border-item">
-                            <h5 className="gpa">GPA</h5>
-                            <h5 className="point">
-                              {education.gpa}{" "}
-                              <span className="total-point">
-                                / {education.outOf}
-                              </span>
-                            </h5>
-                          </div>
-                        </div>
-                      </li>
-                    );
-                  })}
 
-                  {/* <li className="education-item">
-                    <div className="education-details">
-                      <h4 className="item-title">
-                        B.Sc. in Computer Science and Engineering
-                      </h4>
-                      <h5 className="institute">
-                        Daffodil International University
-                      </h5>
-                      <h6 className="duration">
-                        <span>
-                          {" "}
-                          <i className="fa fa-calendar"></i>{" "}
-                        </span>{" "}
-                        January, 2018 - Ongoing
-                      </h6>
-                    </div>
-                    <div className="grade">
-                      <div id="left-border-item">
-                        <h5 className="gpa">GPA</h5>
-                        <h5 className="point">
-                          3.73 <span className="total-point">/ 4.0</span>
-                        </h5>
-                      </div>
-                    </div>
-                  </li> */}
-                </ul>
+            {educations.length !== 0 && (
+              <div className="education">
+                <h2 className="section-header">Education</h2>
+                <div className="education-body">
+                  <ul className="educations">
+                    {educations.map((education, index) => {
+                      return (
+                        <li className="education-item">
+                          <div className="education-details">
+                            <h4 className="item-title">{education.degree}</h4>
+                            <h5 className="institute">{education.institute}</h5>
+                            <h6 className="duration">
+                              <span>
+                                {" "}
+                                <i className="fa fa-calendar"></i>{" "}
+                              </span>{" "}
+                              {education.start} -{" "}
+                              {education.ongoing ? (
+                                <span>Ongoing</span>
+                              ) : (
+                                education.end
+                              )}
+                            </h6>
+                          </div>
+                          <div className="grade">
+                            <div id="left-border-item">
+                              <h5 className="gpa">GPA</h5>
+                              <h5 className="point">
+                                {education.gpa}{" "}
+                                <span className="total-point">
+                                  / {education.outOf}
+                                </span>
+                              </h5>
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
+
+            {experiences.length !== 0 && (
+              <div className="experience">
+                <h2 className="section-header">Experience</h2>
+                <div className="experience-body">
+                  <ul className="experiences">
+                    {experiences.map((experience, index) => {
+                      return (
+                        <li className="experience-item">
+                          <div className="experience-details">
+                            <h4 className="item-title">{experience.title}</h4>
+                            <h5 className="organization">
+                              {experience.organization}
+                            </h5>
+                            <h6 className="duration">
+                              <span>
+                                {" "}
+                                <i className="fa fa-calendar"></i>{" "}
+                              </span>{" "}
+                              {experience.start} -{" "}
+                              {experience.ongoing ? (
+                                <span>Present</span>
+                              ) : (
+                                experience.end
+                              )}
+                            </h6>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            )}
 
             <div className="projects">
               <h2 className="section-header">Projects</h2>

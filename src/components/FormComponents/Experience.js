@@ -10,46 +10,40 @@ import {
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { changeEducations } from "../../actions/formActions";
-import EducationsList from "./EducationsList";
+import { changeExperiences } from "../../actions/formActions";
+import ExperienceList from "./ExperienceList";
 
-function Education() {
-  const educations = useSelector((state) => state.educations);
-  const [degree, setDegree] = useState("");
-  const [institute, setInstitute] = useState("");
+function Experience() {
+  const experiences = useSelector((state) => state.experiences);
+  const [title, settitle] = useState("");
+  const [organization, setorganization] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
-  const [gpa, setGpa] = useState("");
-  const [outOf, setOutOf] = useState("");
 
   const [ongoing, setOngoing] = useState(false);
 
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    const newEducation = {
-      degree,
-      institute,
+    const newExperiences = {
+      title,
+      organization,
       start,
       end,
       ongoing,
-      gpa,
-      outOf,
     };
 
-    dispatch(changeEducations([...educations, newEducation]));
+    dispatch(changeExperiences([...experiences, newExperiences]));
 
     localStorage.setItem(
-      "Educations",
-      JSON.stringify([...educations, newEducation])
+      "Experiences",
+      JSON.stringify([...experiences, newExperiences])
     );
 
-    setDegree("");
-    setInstitute("");
+    settitle("");
+    setorganization("");
     setStart("");
     setEnd("");
-    setGpa("");
-    setOutOf("");
     setOngoing(false);
   };
 
@@ -57,7 +51,7 @@ function Education() {
     <Box component="div" mb={3}>
       <Container>
         <Typography variant="h4" component="h4" align="center" color="primary">
-          Education
+          Experience
         </Typography>
 
         <Grid
@@ -73,9 +67,9 @@ function Education() {
                 <TextField
                   variant="standard"
                   color="secondary"
-                  label="Degree"
-                  value={degree}
-                  onChange={(e) => setDegree(e.target.value)}
+                  label="Title"
+                  value={title}
+                  onChange={(e) => settitle(e.target.value)}
                   fullWidth
                 />
               </Box>
@@ -84,9 +78,9 @@ function Education() {
                 <TextField
                   variant="standard"
                   color="secondary"
-                  label="Institute"
-                  value={institute}
-                  onChange={(e) => setInstitute(e.target.value)}
+                  label="Organization"
+                  value={organization}
+                  onChange={(e) => setorganization(e.target.value)}
                   fullWidth
                 />
               </Box>
@@ -125,29 +119,7 @@ function Education() {
                         color="secondary"
                       />
                     }
-                    label="Ongoing"
-                  />
-                </Box>
-              </Box>
-              <Box component="div" m={2}>
-                <Box component="span" pr={2}>
-                  <TextField
-                    variant="standard"
-                    label="Grade point"
-                    color="secondary"
-                    type="number"
-                    value={gpa}
-                    onChange={(e) => setGpa(e.target.value)}
-                  />
-                </Box>
-                <Box component="span" pl={2}>
-                  <TextField
-                    variant="standard"
-                    label="Out of"
-                    color="secondary"
-                    type="number"
-                    value={outOf}
-                    onChange={(e) => setOutOf(e.target.value)}
+                    label="Present"
                   />
                 </Box>
               </Box>
@@ -158,13 +130,13 @@ function Education() {
                 color="secondary"
                 onClick={handleSubmit}
               >
-                Add Education
+                Add Experience
               </Button>
             </Box>
           </Grid>
 
           <Grid item sm="5">
-            <EducationsList />
+            <ExperienceList />
           </Grid>
         </Grid>
       </Container>
@@ -172,4 +144,4 @@ function Education() {
   );
 }
 
-export default Education;
+export default Experience;

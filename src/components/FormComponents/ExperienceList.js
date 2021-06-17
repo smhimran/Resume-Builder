@@ -2,27 +2,25 @@ import { Box, Grid, IconButton } from "@material-ui/core";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ClearIcon from "@material-ui/icons/Clear";
-import { changeEducations } from "../../actions/formActions";
+import { changeExperiences } from "../../actions/formActions";
 import { Typography } from "@material-ui/core";
 
-function EducationsList() {
-  const educations = useSelector((state) => state.educations);
+function ExpereienceList() {
+  const experiences = useSelector((state) => state.experiences);
 
   const dispatch = useDispatch();
 
   const handleDelete = (index) => {
-    const newEducationList = educations.filter(
-      (education, ind) => ind !== index
+    const newEducationList = experiences.filter(
+      (expericence, ind) => ind !== index
     );
 
-    dispatch(changeEducations(newEducationList));
-
-    localStorage.setItem("Educations", JSON.stringify(newEducationList));
+    dispatch(changeExperiences(newEducationList));
   };
 
   return (
     <Box component="div" m={2}>
-      {educations.map((education, index) => {
+      {experiences.map((experience, index) => {
         return (
           <Box component="div" m={2} boxShadow={2}>
             <Grid
@@ -35,17 +33,14 @@ function EducationsList() {
               <Grid item sm="10">
                 <Box component="div" m={2}>
                   <Typography variant="subtitle1" color="secondary">
-                    {education.degree}
+                    {experience.title}
                   </Typography>
                   <Typography variant="subtitle2" color="primary">
-                    {education.institute}
+                    {experience.organization}
                   </Typography>
                   <Typography variant="overline" component="p" color="primary">
-                    {education.start} -{" "}
-                    {education.ongoing ? <span>Ongoing</span> : education.end}
-                  </Typography>
-                  <Typography variant="caption" component="p" color="primary">
-                    {education.gpa} out of {education.outOf}
+                    {experience.start} -{" "}
+                    {experience.ongoing ? <span>Present</span> : experience.end}
                   </Typography>
                 </Box>
               </Grid>
@@ -64,4 +59,4 @@ function EducationsList() {
   );
 }
 
-export default EducationsList;
+export default ExpereienceList;

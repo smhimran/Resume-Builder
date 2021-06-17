@@ -3,6 +3,7 @@ import {
   CHANGE_CONTACT,
   CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
+  CHANGE_EXPERIENCES,
   CHANGE_IMAGE,
   CHANGE_INTRO,
   CHANGE_NAME,
@@ -70,5 +71,12 @@ export const changeEducations = (educations) => {
   return {
     type: CHANGE_EDUCATIONS,
     payload: educations,
+  };
+};
+
+export const changeExperiences = (experiences) => {
+  return {
+    type: CHANGE_EXPERIENCES,
+    payload: experiences,
   };
 };

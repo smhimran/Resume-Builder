@@ -4,7 +4,7 @@ $secondaryColor: #0f92ff;
 $secondaryColorGreen: #1bbb1b;
 $textColor: #444;
 $textColorSecondary: #666;
-$breakpoint-tablet: 1024px;
+$breakpoint-tablet: 1344px;
 
 @mixin section-header {
   padding: 10px 0;
@@ -46,7 +46,7 @@ $breakpoint-tablet: 1024px;
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 5px;
 }
 
 body {
@@ -302,6 +302,30 @@ body {
                     color: $textColorSecondary;
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+
+      .experience {
+        .experiences {
+          list-style-type: none;
+          padding-left: 0;
+
+          .experience-item {
+            display: block;
+            margin-bottom: 5px;
+
+            .experience-details {
+              .item-title {
+                @include item-title();
+              }
+
+              .organization,
+              .duration {
+                margin: 0;
+                padding: 0;
               }
             }
           }

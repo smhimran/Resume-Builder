@@ -3,6 +3,7 @@ import {
   CHANGE_CONTACT,
   CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
+  CHANGE_EXPERIENCES,
   CHANGE_IMAGE,
   CHANGE_INTRO,
   CHANGE_NAME,
@@ -20,6 +21,7 @@ const initialState = {
   image: localStorage.getItem("Image"),
   summary: localStorage.getItem("Summary"),
   educations: JSON.parse(localStorage.getItem("Educations")) || [],
+  experiences: JSON.parse(localStorage.getItem("Experiences")) || [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -76,6 +78,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         educations: action.payload,
+      };
+
+    case CHANGE_EXPERIENCES:
+      return {
+        ...state,
+        experiences: action.payload,
       };
 
     default:

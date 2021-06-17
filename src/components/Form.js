@@ -3,6 +3,7 @@ import React from "react";
 import Education from "./FormComponents/Education";
 import PersonalInfo from "./FormComponents/PersonalInfo";
 import Summary from "./FormComponents/Summary";
+import Experience from "./FormComponents/Experience";
 
 function Form() {
   return (
@@ -10,6 +11,7 @@ function Form() {
       <PersonalInfo />
       <Summary />
       <Education />
+      <Experience />
     </Box>
   );
 }
