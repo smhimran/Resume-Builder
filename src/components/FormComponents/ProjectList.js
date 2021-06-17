@@ -2,26 +2,24 @@ import { Box, Grid, IconButton } from "@material-ui/core";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ClearIcon from "@material-ui/icons/Clear";
-import { changeExperiences } from "../../actions/formActions";
+import { changeProjects } from "../../actions/formActions";
 import { Typography } from "@material-ui/core";
 
-function ExpereienceList() {
-  const experiences = useSelector((state) => state.experiences);
+function ProjectList() {
+  const projects = useSelector((state) => state.projects);
 
   const dispatch = useDispatch();
 
   const handleDelete = (index) => {
-    const newExperienceList = experiences.filter(
-      (expericence, ind) => ind !== index
-    );
+    const newProjectList = projects.filter((project, ind) => ind !== index);
 
-    dispatch(changeExperiences(newExperienceList));
-    localStorage.setItem("Experiences", JSON.stringify(newExperienceList));
+    dispatch(changeProjects(newProjectList));
+    localStorage.setItem("Projects", JSON.stringify(newProjectList));
   };
 
   return (
     <Box component="div" m={2}>
-      {experiences.map((experience, index) => {
+      {projects.map((project, index) => {
         return (
           <Box component="div" m={2} boxShadow={2}>
             <Grid
@@ -34,14 +32,13 @@ function ExpereienceList() {
               <Grid item sm="10">
                 <Box component="div" m={2}>
                   <Typography variant="subtitle1" color="secondary">
-                    {experience.title}
+                    {project.title}
                   </Typography>
                   <Typography variant="subtitle2" color="primary">
-                    {experience.organization}
+                    {project.link}
                   </Typography>
                   <Typography variant="overline" component="p" color="primary">
-                    {experience.start} -{" "}
-                    {experience.ongoing ? <span>Present</span> : experience.end}
+                    {project.description}
                   </Typography>
                 </Box>
               </Grid>
@@ -60,4 +57,4 @@ function ExpereienceList() {
   );
 }
 
-export default ExpereienceList;
+export default ProjectList;

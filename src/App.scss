@@ -259,6 +259,7 @@ body {
           padding-left: 0;
 
           .education-item {
+            @include list-border();
             display: grid;
             grid-template-columns: 8fr 2fr;
 
@@ -314,6 +315,7 @@ body {
           padding-left: 0;
 
           .experience-item {
+            @include list-border();
             display: block;
             margin-bottom: 5px;
 

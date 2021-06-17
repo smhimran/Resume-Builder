@@ -229,10 +229,15 @@ body {
 }
 
 .resume-container .main .wrapper .education .educations .education-item {
+  border-bottom: dashed 0.1em #ddd;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 8fr 2fr;
       grid-template-columns: 8fr 2fr;
+}
+
+.resume-container .main .wrapper .education .educations .education-item:last-child {
+  border-bottom: none;
 }
 
 .resume-container .main .wrapper .education .educations .education-item .education-details .item-title {
@@ -285,8 +290,13 @@ body {
 }
 
 .resume-container .main .wrapper .experience .experiences .experience-item {
+  border-bottom: dashed 0.1em #ddd;
   display: block;
   margin-bottom: 5px;
+}
+
+.resume-container .main .wrapper .experience .experiences .experience-item:last-child {
+  border-bottom: none;
 }
 
 .resume-container .main .wrapper .experience .experiences .experience-item .experience-details .item-title {

@@ -4,6 +4,7 @@ import Education from "./FormComponents/Education";
 import PersonalInfo from "./FormComponents/PersonalInfo";
 import Summary from "./FormComponents/Summary";
 import Experience from "./FormComponents/Experience";
+import Projects from "./FormComponents/Projects";
 
 function Form() {
   return (
@@ -12,6 +13,7 @@ function Form() {
       <Summary />
       <Education />
       <Experience />
+      <Projects />
     </Box>
   );
 }

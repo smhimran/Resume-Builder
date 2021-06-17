@@ -51,7 +51,7 @@ function Experience() {
     <Box component="div" mb={3}>
       <Container>
         <Typography variant="h4" component="h4" align="center" color="primary">
-          Experience
+          Experiences
         </Typography>
 
         <Grid

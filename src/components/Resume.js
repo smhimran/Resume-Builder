@@ -12,6 +12,7 @@ function Resume() {
   const summary = useSelector((state) => state.summary);
   const educations = useSelector((state) => state.educations);
   const experiences = useSelector((state) => state.experiences);
+  const projects = useSelector((state) => state.projects);
 
   return (
     <div className="resume-container">
@@ -155,31 +156,38 @@ function Resume() {
               </div>
             )}
 
-            <div className="projects">
-              <h2 className="section-header">Projects</h2>
-              <div className="projectslists">
-                <ul className="projectslist">
-                  <li className="projectitem">
-                    <div className="project">
-                      <h4 className="project-title">Hacksprint</h4>
-                      <div className="link">
-                        <span>
-                          <i className="fa fa-link"></i>
-                        </span>
-                        <a
-                          href="http://hacksprint.me"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          http://hacksprint.me
-                        </a>
-                      </div>
-                      <div className="description">
-                        <p>Where developers challenge their coding skills</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="projectitem">
+            {projects.length !== 0 && (
+              <div className="projects">
+                <h2 className="section-header">Projects</h2>
+                <div className="projectslists">
+                  <ul className="projectslist">
+                    {projects.map((project, index) => {
+                      return (
+                        <li className="projectitem">
+                          <div className="project">
+                            <h4 className="project-title">{project.title}</h4>
+                            <div className="link">
+                              <span>
+                                <i className="fa fa-link"></i>
+                              </span>
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {" "}
+                                {project.link}
+                              </a>
+                            </div>
+                            <div className="description">
+                              <p>{project.description}</p>
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
+
+                    {/* <li className="projectitem">
                     <div className="project">
                       <h4 className="project-title">BlueProfile</h4>
                       <div className="link">
@@ -238,10 +246,11 @@ function Resume() {
                         <p>An expense tracker app</p>
                       </div>
                     </div>
-                  </li>
-                </ul>
+                  </li> */}
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="achievements">
               <h2 className="section-header">Achievements</h2>

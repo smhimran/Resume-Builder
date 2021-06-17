@@ -7,6 +7,7 @@ import {
   CHANGE_IMAGE,
   CHANGE_INTRO,
   CHANGE_NAME,
+  CHANGE_PROJECTS,
   CHANGE_SUMMARY,
   CHANGE_URL,
 } from "./types";
@@ -78,5 +79,12 @@ export const changeExperiences = (experiences) => {
   return {
     type: CHANGE_EXPERIENCES,
     payload: experiences,
+  };
+};
+
+export const changeProjects = (projects) => {
+  return {
+    type: CHANGE_PROJECTS,
+    payload: projects,
   };
 };
