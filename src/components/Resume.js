@@ -13,6 +13,7 @@ function Resume() {
   const educations = useSelector((state) => state.educations);
   const experiences = useSelector((state) => state.experiences);
   const projects = useSelector((state) => state.projects);
+  const achievements = useSelector((state) => state.achievements);
 
   return (
     <div className="resume-container">
@@ -186,97 +187,43 @@ function Resume() {
                         </li>
                       );
                     })}
-
-                    {/* <li className="projectitem">
-                    <div className="project">
-                      <h4 className="project-title">BlueProfile</h4>
-                      <div className="link">
-                        <span>
-                          <i className="fa fa-link"></i>
-                        </span>
-                        <a
-                          href="https://blueprofile-beta.herokuapp.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          https://blueprofile-beta.herokuapp.com/
-                        </a>
-                      </div>
-                      <div className="description">
-                        <p>Online profile for blue programmers</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="projectitem">
-                    <div className="project">
-                      <h4 className="project-title">GreenDivision</h4>
-                      <div className="link">
-                        <span>
-                          <i className="fa fa-link"></i>
-                        </span>
-                        <a
-                          href="https://greendivision.herokuapp.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          https://greendivision.herokuapp.com/
-                        </a>
-                      </div>
-                      <div className="description">
-                        <p>A guide for beginners in programming</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li className="projectitem">
-                    <div className="project">
-                      <h4 className="project-title">ExpenseXpert</h4>
-                      <div className="link">
-                        <span>
-                          <i className="fa fa-link"></i>
-                        </span>
-                        <a
-                          href="https://github.com/erfanul007/ExpenseXpert"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          https://github.com/erfanul007/ExpenseXpert
-                        </a>
-                      </div>
-                      <div className="description">
-                        <p>An expense tracker app</p>
-                      </div>
-                    </div>
-                  </li> */}
                   </ul>
                 </div>
               </div>
             )}
 
-            <div className="achievements">
-              <h2 className="section-header">Achievements</h2>
-              <div className="achievements-items">
-                <ul className="achievementlist">
-                  <li className="achivement">
-                    <span className="icon">
-                      <i className="fa fa-trophy"></i>
-                    </span>{" "}
-                    3rd in DIU Intra University Programming Contest,2019
-                  </li>
-                  <li className="achivement">
-                    <span className="icon">
-                      <i className="fa fa-diamond"></i>
-                    </span>{" "}
-                    6th DIU Take-off Programming Contest, Summer 2018
-                  </li>
-                  <li className="achivement">
-                    <span className="icon">
-                      <i className="fa fa-code"></i>
-                    </span>{" "}
-                    60th in ICPC Dhaka Regional 2019
-                  </li>
-                </ul>
+            {achievements.length !== 0 && (
+              <div className="achievements">
+                <h2 className="section-header">Achievements</h2>
+                <div className="achievements-items">
+                  <ul className="achievementlist">
+                    {achievements.map((achievement, index) => {
+                      return (
+                        <li className="achivement">
+                          <span className="icon">
+                            <i className="fa fa-trophy"></i>
+                          </span>{" "}
+                          {achievement.title}
+                        </li>
+                      );
+                    })}
+
+                    {/* <li className="achivement">
+                      <span className="icon">
+                        <i className="fa fa-diamond"></i>
+                      </span>{" "}
+                      6th DIU Take-off Programming Contest, Summer 2018
+                    </li>
+                    <li className="achivement">
+                      <span className="icon">
+                        <i className="fa fa-code"></i>
+                      </span>{" "}
+                      60th in ICPC Dhaka Regional 2019
+                    </li> */}
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
           </div>
           <div className="right">
             <div className="skills">

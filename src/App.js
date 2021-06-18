@@ -10,8 +10,12 @@ function App() {
     <Provider store={store}>
       <div>
         <div className="main-container">
-          <Form />
-          <Preview />
+          <div className="resume-form">
+            <Form />
+          </div>
+          <div className="resume-preview">
+            <Preview />
+          </div>
         </div>
       </div>
     </Provider>

@@ -1,4 +1,5 @@
 import {
+  CHANGE_ACHIEVEMENTS,
   CHANGE_ADRESS,
   CHANGE_CONTACT,
   CHANGE_EDUCATIONS,
@@ -24,6 +25,7 @@ const initialState = {
   educations: JSON.parse(localStorage.getItem("Educations")) || [],
   experiences: JSON.parse(localStorage.getItem("Experiences")) || [],
   projects: JSON.parse(localStorage.getItem("Projects")) || [],
+  achievements: JSON.parse(localStorage.getItem("Achievements")) || [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -92,6 +94,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         projects: action.payload,
+      };
+
+    case CHANGE_ACHIEVEMENTS:
+      return {
+        ...state,
+        achievements: action.payload,
       };
 
     default:

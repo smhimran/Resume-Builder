@@ -1,4 +1,5 @@
 import {
+  CHANGE_ACHIEVEMENTS,
   CHANGE_ADRESS,
   CHANGE_CONTACT,
   CHANGE_EDUCATIONS,
@@ -86,5 +87,12 @@ export const changeProjects = (projects) => {
   return {
     type: CHANGE_PROJECTS,
     payload: projects,
+  };
+};
+
+export const changeAchievements = (achievements) => {
+  return {
+    type: CHANGE_ACHIEVEMENTS,
+    payload: achievements,
   };
 };

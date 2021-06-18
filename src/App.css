@@ -13,6 +13,11 @@ body {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-column-gap: 1rem;
+  height: calc(100vh - 10px);
+}
+
+.resume-form {
+  overflow: auto;
 }
 
 .print-preview {
@@ -402,22 +407,6 @@ body {
   text-align: center;
   color: #ec3b18;
   margin: 0;
-}
-
-.preview .preview-header .preview-btn {
-  display: inline-block;
-  font-size: 18px;
-  float: right;
-  padding: 10px 10px;
-  background-color: #fff;
-  color: #1bbb1b;
-  border: solid 1px #1bbb1b;
-  border-radius: 5px;
-}
-
-.preview .preview-header .preview-btn:hover {
-  background-color: #1bbb1b;
-  color: #fff;
 }
 
 .preview .print-preview {
