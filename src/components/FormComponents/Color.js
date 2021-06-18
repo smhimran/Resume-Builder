@@ -23,7 +23,9 @@ function Color() {
         Color Theme
       </Typography>
       <FormControl component="fieldset">
-        <FormLabel component="legend">Choose a theme color</FormLabel>
+        <FormLabel component="legend" color="secondary">
+          Choose a theme color
+        </FormLabel>
         <RadioGroup
           aria-label="Color"
           name="color"
