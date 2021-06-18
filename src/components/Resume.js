@@ -33,22 +33,26 @@ function Resume() {
               </div>
               <div className="address">
                 <div className="col">
-                  <div>
-                    <a href="tel:{contact}">
-                      <span>
-                        <i className="fa fa-phone"></i>
-                      </span>
-                      {contact}
-                    </a>
-                  </div>
-                  <div>
-                    <a href="mailto:{email}">
-                      <span>
-                        <i className="fa fa-envelope-o"></i>
-                      </span>
-                      {email}
-                    </a>
-                  </div>
+                  {contact && (
+                    <div>
+                      <a href="tel:{contact}">
+                        <span>
+                          <i className="fa fa-phone"></i>
+                        </span>{" "}
+                        {contact}
+                      </a>
+                    </div>
+                  )}
+                  {email && (
+                    <div>
+                      <a href="mailto:{email}">
+                        <span>
+                          <i className="fa fa-envelope-o"></i>
+                        </span>{" "}
+                        {email}
+                      </a>
+                    </div>
+                  )}
                 </div>
                 <div className="col">
                   {url && (
@@ -61,12 +65,15 @@ function Resume() {
                       </a>
                     </div>
                   )}
-                  <div>
-                    <span>
-                      <i className="fa fa-map-marker"></i>
-                    </span>{" "}
-                    {address}
-                  </div>
+
+                  {address && (
+                    <div>
+                      <span>
+                        <i className="fa fa-map-marker"></i>
+                      </span>{" "}
+                      {address}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

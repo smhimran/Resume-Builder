@@ -51,10 +51,6 @@ function PersonalInfo() {
 
   return (
     <Box component="div">
-      <Typography variant="h3" component="h3" align="center" color="secondary">
-        Resume Builder
-      </Typography>
-
       <Container maxWidth="md" style={{ marginTop: "20px" }}>
         <Typography variant="h4" component="h4" align="center" color="primary">
           Personal Information

@@ -9,10 +9,18 @@ import Achievements from "./FormComponents/Achievements";
 import Strengths from "./FormComponents/Strengths";
 import Skills from "./FormComponents/Skills";
 import Social from "./FormComponents/Social";
+import { Alert } from "@material-ui/lab";
+import { Typography } from "@material-ui/core";
 
 function Form() {
   return (
     <Box component="div" m={2} p={2}>
+      <Typography variant="h3" component="h3" align="center" color="secondary">
+        Resume Builder
+      </Typography>
+      <Alert severity="info">
+        If a field has value, it'll appare in the resume automatically
+      </Alert>
       <PersonalInfo />
       <Summary />
       <Education />

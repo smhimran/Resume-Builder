@@ -3,7 +3,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import Alert from '@material-ui/lab/Alert';
+import Alert from "@material-ui/lab/Alert";
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -29,9 +29,9 @@ function Social() {
       </Typography>
 
       <form>
-          <Box component="div" m={2}>
-              <Alert severity="info">Provide Link only</Alert>
-          </Box>
+        <Box component="div" m={2}>
+          <Alert severity="info">Provide Link only</Alert>
+        </Box>
         <Box component="div" m={2}>
           <TextField
             variant="standard"
@@ -50,6 +50,7 @@ function Social() {
             onChange={(e) => {
               setLinkedin(e.target.value);
               dispatch(changeLinkedin(e.target.value));
+              localStorage.setItem("Linkedin", e.target.value);
             }}
           />
         </Box>
@@ -71,6 +72,7 @@ function Social() {
             onChange={(e) => {
               setTwitter(e.target.value);
               dispatch(changeTwitter(e.target.value));
+              localStorage.setItem("Twitter", e.target.value);
             }}
           />
         </Box>
@@ -92,6 +94,7 @@ function Social() {
             onChange={(e) => {
               setGithub(e.target.value);
               dispatch(changeGithub(e.target.value));
+              localStorage.setItem("Github", e.target.value);
             }}
           />
         </Box>
@@ -113,6 +116,7 @@ function Social() {
             onChange={(e) => {
               setFacebook(e.target.value);
               dispatch(changeFacebook(e.target.value));
+              localStorage.setItem("Facebook", e.target.value);
             }}
           />
         </Box>
