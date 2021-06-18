@@ -424,6 +424,7 @@ body {
   .main-container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    height: auto;
   }
 }
 /*# sourceMappingURL=App.css.map */

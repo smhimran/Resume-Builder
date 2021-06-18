@@ -453,5 +453,6 @@ body {
 @media (max-width: $breakpoint-tablet) {
   .main-container {
     grid-template-columns: 1fr;
+    height: auto;
   }
 }
