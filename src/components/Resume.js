@@ -14,6 +14,7 @@ function Resume() {
   const experiences = useSelector((state) => state.experiences);
   const projects = useSelector((state) => state.projects);
   const achievements = useSelector((state) => state.achievements);
+  const strengths = useSelector((state) => state.strengths);
 
   return (
     <div className="resume-container">
@@ -207,19 +208,6 @@ function Resume() {
                         </li>
                       );
                     })}
-
-                    {/* <li className="achivement">
-                      <span className="icon">
-                        <i className="fa fa-diamond"></i>
-                      </span>{" "}
-                      6th DIU Take-off Programming Contest, Summer 2018
-                    </li>
-                    <li className="achivement">
-                      <span className="icon">
-                        <i className="fa fa-code"></i>
-                      </span>{" "}
-                      60th in ICPC Dhaka Regional 2019
-                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -255,25 +243,23 @@ function Resume() {
               </div>
             </div>
 
-            <div className="strengths">
-              <h2 className="section-header">Strengths</h2>
-              <div className="strengthlists">
-                <ul className="strengthlist">
-                  <li className="strength">
-                    <i className="fa fa-circle-o-notch"></i> Learning Agility
-                  </li>
-                  <li className="strength">
-                    <i className="fa fa-circle-o-notch"></i> Self Motivated
-                  </li>
-                  <li className="strength">
-                    <i className="fa fa-circle-o-notch"></i> Critical Thinking
-                  </li>
-                  <li className="strength">
-                    <i className="fa fa-circle-o-notch"></i> Positive Attitude
-                  </li>
-                </ul>
+            {strengths.length !== 0 && (
+              <div className="strengths">
+                <h2 className="section-header">Strengths</h2>
+                <div className="strengthlists">
+                  <ul className="strengthlist">
+                    {strengths.map((strength, index) => {
+                      return (
+                        <li className="strength">
+                          <i className="fa fa-circle-o-notch"></i>{" "}
+                          {strength.title}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
 
             <div className="online">
               <h2 className="section-header">Find Me Online</h2>

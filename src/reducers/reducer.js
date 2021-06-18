@@ -9,6 +9,7 @@ import {
   CHANGE_INTRO,
   CHANGE_NAME,
   CHANGE_PROJECTS,
+  CHANGE_STRENGTHS,
   CHANGE_SUMMARY,
   CHANGE_URL,
 } from "../actions/types";
@@ -26,6 +27,7 @@ const initialState = {
   experiences: JSON.parse(localStorage.getItem("Experiences")) || [],
   projects: JSON.parse(localStorage.getItem("Projects")) || [],
   achievements: JSON.parse(localStorage.getItem("Achievements")) || [],
+  strengths: JSON.parse(localStorage.getItem("Strengths")) || [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -100,6 +102,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         achievements: action.payload,
+      };
+
+    case CHANGE_STRENGTHS:
+      return {
+        ...state,
+        strengths: action.payload,
       };
 
     default:

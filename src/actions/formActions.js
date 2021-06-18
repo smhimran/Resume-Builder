@@ -9,6 +9,7 @@ import {
   CHANGE_INTRO,
   CHANGE_NAME,
   CHANGE_PROJECTS,
+  CHANGE_STRENGTHS,
   CHANGE_SUMMARY,
   CHANGE_URL,
 } from "./types";
@@ -94,5 +95,12 @@ export const changeAchievements = (achievements) => {
   return {
     type: CHANGE_ACHIEVEMENTS,
     payload: achievements,
+  };
+};
+
+export const changeStrengths = (strengths) => {
+  return {
+    type: CHANGE_STRENGTHS,
+    payload: strengths,
   };
 };
