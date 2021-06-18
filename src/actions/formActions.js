@@ -9,6 +9,7 @@ import {
   CHANGE_INTRO,
   CHANGE_NAME,
   CHANGE_PROJECTS,
+  CHANGE_SKILLS,
   CHANGE_STRENGTHS,
   CHANGE_SUMMARY,
   CHANGE_URL,
@@ -102,5 +103,12 @@ export const changeStrengths = (strengths) => {
   return {
     type: CHANGE_STRENGTHS,
     payload: strengths,
+  };
+};
+
+export const changeSkills = (skills) => {
+  return {
+    type: CHANGE_SKILLS,
+    payload: skills,
   };
 };

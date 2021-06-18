@@ -15,6 +15,7 @@ function Resume() {
   const projects = useSelector((state) => state.projects);
   const achievements = useSelector((state) => state.achievements);
   const strengths = useSelector((state) => state.strengths);
+  const skills = useSelector((state) => state.skills);
 
   return (
     <div className="resume-container">
@@ -214,34 +215,34 @@ function Resume() {
             )}
           </div>
           <div className="right">
-            <div className="skills">
-              <h2 className="section-header">Skills</h2>
-              <div className="skillists">
-                <ul className="skillist">
-                  <li className="skill">
-                    <div className="skill-group">
-                      <h3 className="skill-item">Problem Solving</h3>
-                      <h3 className="skill-item">C/C++</h3>
-                      <h3 className="skill-item">Python</h3>
-                    </div>
-                  </li>
-                  <li className="skill">
-                    <div className="skill-group">
-                      <h3 className="skill-item">Web Development</h3>
-                      <h3 className="skill-item">Django</h3>
-                      <h3 className="skill-item">Express</h3>
-                    </div>
-                  </li>
-                  <li className="skill">
-                    <div className="skill-group">
-                      <h3 className="skill-item">HTML & CSS</h3>
-                      <h3 className="skill-item">React</h3>
-                      <h3 className="skill-item">Node</h3>
-                    </div>
-                  </li>
-                </ul>
+            {skills.length !== 0 && (
+              <div className="skills">
+                <h2 className="section-header">Skills</h2>
+                <div className="skillists">
+                  <ul className="skillist">
+                    {skills.map((skill, index) => {
+                      return (
+                        <li className="skill">
+                          <div className="skill-group">
+                            {skill.first && (
+                              <h3 className="skill-item">{skill.first}</h3>
+                            )}
+
+                            {skill.second && (
+                              <h3 className="skill-item">{skill.second}</h3>
+                            )}
+
+                            {skill.third && (
+                              <h3 className="skill-item">{skill.third}</h3>
+                            )}
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
 
             {strengths.length !== 0 && (
               <div className="strengths">
