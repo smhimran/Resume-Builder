@@ -388,6 +388,111 @@ body {
   color: #0f92ff;
 }
 
+.green {
+  color: #1bbb1b;
+}
+
+.green .main .header .info .contact .address .col .fa {
+  color: #1bbb1b;
+}
+
+.green .main .header .dp img {
+  border: 4px solid #1bbb1b;
+}
+
+.green .main .wrapper .section-header {
+  padding: 10px 0;
+  border-bottom: solid 3px #1bbb1b;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+.green .main .wrapper .strengths .strengthlists .strengthlist .strength .fa {
+  color: #1bbb1b;
+}
+
+.green .main .wrapper .education .educations .education-item .grade #left-border-item .point {
+  color: #1bbb1b;
+}
+
+.green .main .wrapper .projects .projectslists .projectslist .projectitem .project .link .fa {
+  color: #1bbb1b;
+}
+
+.green .main .wrapper .achievements .achievements-items .achievementlist .achivement .icon {
+  color: #1bbb1b;
+}
+
+.purple {
+  color: #9747ff;
+}
+
+.purple .main .header .info .contact .address .col .fa {
+  color: #9747ff;
+}
+
+.purple .main .header .dp img {
+  border: 4px solid #9747ff;
+}
+
+.purple .main .wrapper .section-header {
+  padding: 10px 0;
+  border-bottom: solid 3px #9747ff;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+.purple .main .wrapper .strengths .strengthlists .strengthlist .strength .fa {
+  color: #9747ff;
+}
+
+.purple .main .wrapper .education .educations .education-item .grade #left-border-item .point {
+  color: #9747ff;
+}
+
+.purple .main .wrapper .projects .projectslists .projectslist .projectitem .project .link .fa {
+  color: #9747ff;
+}
+
+.purple .main .wrapper .achievements .achievements-items .achievementlist .achivement .icon {
+  color: #9747ff;
+}
+
+.blackandwhite {
+  color: #777;
+}
+
+.blackandwhite .main .header .info .contact .address .col .fa {
+  color: #777;
+}
+
+.blackandwhite .main .header .dp img {
+  border: 4px solid #777;
+}
+
+.blackandwhite .main .wrapper .section-header {
+  padding: 10px 0;
+  border-bottom: solid 3px #999;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+.blackandwhite .main .wrapper .strengths .strengthlists .strengthlist .strength .fa {
+  color: #777;
+}
+
+.blackandwhite .main .wrapper .education .educations .education-item .grade #left-border-item .point {
+  color: #777;
+}
+
+.blackandwhite .main .wrapper .projects .projectslists .projectslist .projectitem .project .link .fa {
+  color: #777;
+}
+
+.blackandwhite .main .wrapper .achievements .achievements-items .achievementlist .achivement .icon {
+  color: #777;
+}
+
 @media print {
   html,
   body {

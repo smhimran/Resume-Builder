@@ -1,6 +1,7 @@
 import {
   CHANGE_ACHIEVEMENTS,
   CHANGE_ADRESS,
+  CHANGE_COLOR,
   CHANGE_CONTACT,
   CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
@@ -142,5 +143,12 @@ export const changeFacebook = (facebook) => {
   return {
     type: CHANGE_FACEBOOK,
     payload: facebook,
+  };
+};
+
+export const changeColor = (color) => {
+  return {
+    type: CHANGE_COLOR,
+    payload: color,
   };
 };

@@ -1,7 +1,11 @@
 $themeColor: #0f92ff;
 $themeColorGreen: #1bbb1b;
+$themeColorPurple: #9747ff;
 $secondaryColor: #0f92ff;
 $secondaryColorGreen: #1bbb1b;
+$secondaryColorPurple: #9747ff;
+$themeColorBlack: #777;
+$secondaryColorBlack: #999;
 $textColor: #444;
 $textColorSecondary: #666;
 $breakpoint-tablet: 1344px;
@@ -9,6 +13,27 @@ $breakpoint-tablet: 1344px;
 @mixin section-header {
   padding: 10px 0;
   border-bottom: solid 3px $secondaryColor;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+@mixin section-headerGreen {
+  padding: 10px 0;
+  border-bottom: solid 3px $secondaryColorGreen;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+@mixin section-headerPurple {
+  padding: 10px 0;
+  border-bottom: solid 3px $secondaryColorPurple;
+  margin-bottom: 0px;
+  margin-top: 15.5px;
+}
+
+@mixin section-headerBlack {
+  padding: 10px 0;
+  border-bottom: solid 3px $secondaryColorBlack;
   margin-bottom: 0px;
   margin-top: 15.5px;
 }
@@ -406,6 +431,264 @@ body {
                 padding: 2px 5px;
                 font-size: 20px;
                 color: $themeColor;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.green {
+  color: $themeColorGreen;
+
+  .main {
+    .header {
+      .info {
+        .contact {
+          .address {
+            .col {
+              .fa {
+                color: $themeColorGreen;
+              }
+            }
+          }
+        }
+      }
+
+      .dp {
+        img {
+          border: 4px solid $themeColorGreen;
+        }
+      }
+    }
+
+    .wrapper {
+      .section-header {
+        @include section-headerGreen();
+      }
+
+      .strengths {
+        .strengthlists {
+          .strengthlist {
+            .strength {
+              .fa {
+                color: $themeColorGreen;
+              }
+            }
+          }
+        }
+      }
+
+      .education {
+        .educations {
+          .education-item {
+            .grade {
+              #left-border-item {
+                .point {
+                  color: $themeColorGreen;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .projects {
+        .projectslists {
+          .projectslist {
+            .projectitem {
+              .project {
+                .link {
+                  .fa {
+                    color: $themeColorGreen;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .achievements {
+        .achievements-items {
+          .achievementlist {
+            .achivement {
+              .icon {
+                color: $themeColorGreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.purple {
+  color: $themeColorPurple;
+
+  .main {
+    .header {
+      .info {
+        .contact {
+          .address {
+            .col {
+              .fa {
+                color: $themeColorPurple;
+              }
+            }
+          }
+        }
+      }
+
+      .dp {
+        img {
+          border: 4px solid $themeColorPurple;
+        }
+      }
+    }
+
+    .wrapper {
+      .section-header {
+        @include section-headerPurple();
+      }
+
+      .strengths {
+        .strengthlists {
+          .strengthlist {
+            .strength {
+              .fa {
+                color: $themeColorPurple;
+              }
+            }
+          }
+        }
+      }
+
+      .education {
+        .educations {
+          .education-item {
+            .grade {
+              #left-border-item {
+                .point {
+                  color: $themeColorPurple;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .projects {
+        .projectslists {
+          .projectslist {
+            .projectitem {
+              .project {
+                .link {
+                  .fa {
+                    color: $themeColorPurple;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .achievements {
+        .achievements-items {
+          .achievementlist {
+            .achivement {
+              .icon {
+                color: $themeColorPurple;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.blackandwhite {
+  color: $themeColorBlack;
+
+  .main {
+    .header {
+      .info {
+        .contact {
+          .address {
+            .col {
+              .fa {
+                color: $themeColorBlack;
+              }
+            }
+          }
+        }
+      }
+
+      .dp {
+        img {
+          border: 4px solid $themeColorBlack;
+        }
+      }
+    }
+
+    .wrapper {
+      .section-header {
+        @include section-headerBlack();
+      }
+
+      .strengths {
+        .strengthlists {
+          .strengthlist {
+            .strength {
+              .fa {
+                color: $themeColorBlack;
+              }
+            }
+          }
+        }
+      }
+
+      .education {
+        .educations {
+          .education-item {
+            .grade {
+              #left-border-item {
+                .point {
+                  color: $themeColorBlack;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .projects {
+        .projectslists {
+          .projectslist {
+            .projectitem {
+              .project {
+                .link {
+                  .fa {
+                    color: $themeColorBlack;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .achievements {
+        .achievements-items {
+          .achievementlist {
+            .achivement {
+              .icon {
+                color: $themeColorBlack;
               }
             }
           }

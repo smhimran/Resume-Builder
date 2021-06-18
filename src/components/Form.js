@@ -11,6 +11,7 @@ import Skills from "./FormComponents/Skills";
 import Social from "./FormComponents/Social";
 import { Alert } from "@material-ui/lab";
 import { Typography } from "@material-ui/core";
+import Color from "./FormComponents/Color";
 
 function Form() {
   return (
@@ -30,6 +31,7 @@ function Form() {
       <Strengths />
       <Achievements />
       <Social />
+      <Color />
     </Box>
   );
 }

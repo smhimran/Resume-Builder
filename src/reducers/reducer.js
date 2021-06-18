@@ -1,6 +1,7 @@
 import {
   CHANGE_ACHIEVEMENTS,
   CHANGE_ADRESS,
+  CHANGE_COLOR,
   CHANGE_CONTACT,
   CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
@@ -38,6 +39,7 @@ const initialState = {
   twitter: localStorage.getItem("Linkedin"),
   github: localStorage.getItem("Github"),
   facebook: localStorage.getItem("Facebook"),
+  color: "blue",
 };
 
 const reducer = (state = initialState, action) => {
@@ -148,6 +150,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         facebook: action.payload,
+      };
+
+    case CHANGE_COLOR:
+      return {
+        ...state,
+        color: action.payload,
       };
 
     default:
