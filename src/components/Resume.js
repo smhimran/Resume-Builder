@@ -16,6 +16,10 @@ function Resume() {
   const achievements = useSelector((state) => state.achievements);
   const strengths = useSelector((state) => state.strengths);
   const skills = useSelector((state) => state.skills);
+  const linkedin = useSelector((state) => state.linkedin);
+  const twitter = useSelector((state) => state.twitter);
+  const github = useSelector((state) => state.github);
+  const facebook = useSelector((state) => state.facebook);
 
   return (
     <div className="resume-container">
@@ -262,69 +266,70 @@ function Resume() {
               </div>
             )}
 
-            <div className="online">
-              <h2 className="section-header">Find Me Online</h2>
-              <div className="social-links">
-                <ul className="sociallist">
-                  <li className="social">
-                    <span className="icon">
-                      <i className="fa fa-linkedin"></i>
-                    </span>
-                    <div className="link">
-                      <span>Linkedin</span>
-                      <a
-                        href="https://www.linkedin.com/in/imran4416/"
-                        className="social-link"
-                      >
-                        https://www.linkedin.com/in/imran4416/
-                      </a>
-                    </div>
-                  </li>
-                  <li className="social">
-                    <span className="icon">
-                      <i className="fa fa-twitter"></i>
-                    </span>
-                    <div className="link">
-                      <span>Twitter</span>
-                      <a
-                        href="https://twitter.com/imran34416/"
-                        className="social-link"
-                      >
-                        https://twitter.com/imran34416/
-                      </a>
-                    </div>
-                  </li>
-                  <li className="social">
-                    <span className="icon">
-                      <i className="fa fa-github"></i>
-                    </span>
-                    <div className="link">
-                      <span>Github</span>
-                      <a
-                        href="https://github.com/Yankee-16"
-                        className="social-link"
-                      >
-                        https://github.com/Yankee-16
-                      </a>
-                    </div>
-                  </li>
-                  <li className="social">
-                    <span className="icon">
-                      <i className="fa fa-facebook"></i>
-                    </span>
-                    <div className="link">
-                      <span>Facebook</span>
-                      <a
-                        href="https://www.facebook.com/Shah.Imran46/"
-                        className="social-link"
-                      >
-                        https://www.facebook.com/Shah.Imran46/
-                      </a>
-                    </div>
-                  </li>
-                </ul>
+            {(linkedin || twitter || github || facebook) && (
+              <div className="online">
+                <h2 className="section-header">Find Me Online</h2>
+                <div className="social-links">
+                  <ul className="sociallist">
+                    {linkedin && (
+                      <li className="social">
+                        <span className="icon">
+                          <i className="fa fa-linkedin"></i>
+                        </span>
+                        <div className="link">
+                          <span>Linkedin</span>
+                          <a href={linkedin} className="social-link">
+                            {linkedin}
+                          </a>
+                        </div>
+                      </li>
+                    )}
+
+                    {twitter && (
+                      <li className="social">
+                        <span className="icon">
+                          <i className="fa fa-twitter"></i>
+                        </span>
+                        <div className="link">
+                          <span>Twitter</span>
+                          <a href={twitter} className="social-link">
+                            {twitter}
+                          </a>
+                        </div>
+                      </li>
+                    )}
+
+                    {github && (
+                      <li className="social">
+                        <span className="icon">
+                          <i className="fa fa-github"></i>
+                        </span>
+                        <div className="link">
+                          <span>Github</span>
+                          <a href={github} className="social-link">
+                            {github}
+                          </a>
+                        </div>
+                      </li>
+                    )}
+
+                    {facebook && (
+                      <li className="social">
+                        <span className="icon">
+                          <i className="fa fa-facebook"></i>
+                        </span>
+                        <div className="link">
+                          <span>Facebook</span>
+                          <a href={facebook} className="social-link">
+                            {facebook}
+                          </a>
+                        </div>
+                      </li>
+                    )}
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

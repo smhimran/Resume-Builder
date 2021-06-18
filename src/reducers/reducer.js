@@ -5,13 +5,17 @@ import {
   CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
   CHANGE_EXPERIENCES,
+  CHANGE_FACEBOOK,
+  CHANGE_GITHUB,
   CHANGE_IMAGE,
   CHANGE_INTRO,
+  CHANGE_LINKEDIN,
   CHANGE_NAME,
   CHANGE_PROJECTS,
   CHANGE_SKILLS,
   CHANGE_STRENGTHS,
   CHANGE_SUMMARY,
+  CHANGE_TWITTER,
   CHANGE_URL,
 } from "../actions/types";
 
@@ -30,6 +34,10 @@ const initialState = {
   achievements: JSON.parse(localStorage.getItem("Achievements")) || [],
   strengths: JSON.parse(localStorage.getItem("Strengths")) || [],
   skills: JSON.parse(localStorage.getItem("Skills")) || [],
+  linkedin: localStorage.getItem("Twitter"),
+  twitter: localStorage.getItem("Linkedin"),
+  github: localStorage.getItem("Github"),
+  facebook: localStorage.getItem("Facebook"),
 };
 
 const reducer = (state = initialState, action) => {
@@ -116,6 +124,30 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         skills: action.payload,
+      };
+
+    case CHANGE_LINKEDIN:
+      return {
+        ...state,
+        linkedin: action.payload,
+      };
+
+    case CHANGE_TWITTER:
+      return {
+        ...state,
+        twitter: action.payload,
+      };
+
+    case CHANGE_GITHUB:
+      return {
+        ...state,
+        github: action.payload,
+      };
+
+    case CHANGE_FACEBOOK:
+      return {
+        ...state,
+        facebook: action.payload,
       };
 
     default:

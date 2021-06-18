@@ -8,6 +8,7 @@ import Projects from "./FormComponents/Projects";
 import Achievements from "./FormComponents/Achievements";
 import Strengths from "./FormComponents/Strengths";
 import Skills from "./FormComponents/Skills";
+import Social from "./FormComponents/Social";
 
 function Form() {
   return (
@@ -20,6 +21,7 @@ function Form() {
       <Skills />
       <Strengths />
       <Achievements />
+      <Social />
     </Box>
   );
 }

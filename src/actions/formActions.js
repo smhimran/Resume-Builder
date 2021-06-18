@@ -5,13 +5,17 @@ import {
   CHANGE_EDUCATIONS,
   CHANGE_EMAIL,
   CHANGE_EXPERIENCES,
+  CHANGE_FACEBOOK,
+  CHANGE_GITHUB,
   CHANGE_IMAGE,
   CHANGE_INTRO,
+  CHANGE_LINKEDIN,
   CHANGE_NAME,
   CHANGE_PROJECTS,
   CHANGE_SKILLS,
   CHANGE_STRENGTHS,
   CHANGE_SUMMARY,
+  CHANGE_TWITTER,
   CHANGE_URL,
 } from "./types";
 
@@ -110,5 +114,33 @@ export const changeSkills = (skills) => {
   return {
     type: CHANGE_SKILLS,
     payload: skills,
+  };
+};
+
+export const changeLinkedin = (linkedin) => {
+  return {
+    type: CHANGE_LINKEDIN,
+    payload: linkedin,
+  };
+};
+
+export const changeTwitter = (twitter) => {
+  return {
+    type: CHANGE_TWITTER,
+    payload: twitter,
+  };
+};
+
+export const changeGithub = (github) => {
+  return {
+    type: CHANGE_GITHUB,
+    payload: github,
+  };
+};
+
+export const changeFacebook = (facebook) => {
+  return {
+    type: CHANGE_FACEBOOK,
+    payload: facebook,
   };
 };

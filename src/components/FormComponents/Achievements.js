@@ -41,7 +41,7 @@ function Achievements() {
           spacing={0}
         >
           <Grid item sm="7">
-            <form autoComplete="off">
+            <form>
               <Box component="div" m={2}>
                 <TextField
                   variant="standard"
